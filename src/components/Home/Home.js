@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
@@ -9,11 +10,11 @@ import Github from "../About/Github";
 import {
   AiFillGithub,
   AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
+  AiFillInstagram } from
+"react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
-function Home() {
+function Home() {const { t } = useTranslation();
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -21,16 +22,16 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
+              <h1 style={{ paddingBottom: 15 }} className="heading">{t("home.hiThere")}
+                {" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
-              <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> SOUMYAJIT BEHERA</strong>
+              <h1 className="heading-name">{t("home.im")}
+
+                <strong className="main-name">{t("home.soumyajitBehera")}</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -41,10 +42,10 @@ function Home() {
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
                 src={homeLogo}
-                alt="home pic"
+                alt={t("home.homePic")}
                 className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
+                style={{ maxHeight: "450px" }} />
+              
             </Col>
           </Row>
         </Container>
@@ -54,9 +55,9 @@ function Home() {
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
-            <p>
-              Feel free to <span className="purple">connect </span>with me
+            <h1>{t("home.findMeOn")}</h1>
+            <p>{t("home.feelFreeTo")}
+              <span className="purple">{t("home.connect")}</span>{t("home.withMe")}
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
@@ -64,8 +65,8 @@ function Home() {
                   href="https://github.com/soumyajit4419"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
+                  className="icon-colour  home-social-icons">
+                  
                   <AiFillGithub />
                 </a>
               </li>
@@ -74,8 +75,8 @@ function Home() {
                   href="https://twitter.com/Soumyajit4419"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
+                  className="icon-colour  home-social-icons">
+                  
                   <AiOutlineTwitter />
                 </a>
               </li>
@@ -84,8 +85,8 @@ function Home() {
                   href="https://www.linkedin.com/in/soumyajit4419/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
+                  className="icon-colour  home-social-icons">
+                  
                   <FaLinkedinIn />
                 </a>
               </li>
@@ -94,8 +95,8 @@ function Home() {
                   href="https://www.instagram.com/soumyajit4419"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
+                  className="icon-colour home-social-icons">
+                  
                   <AiFillInstagram />
                 </a>
               </li>
@@ -103,8 +104,8 @@ function Home() {
           </Col>
         </Row>
       </Container>
-    </section>
-  );
+    </section>);
+
 }
 
 export default Home;
