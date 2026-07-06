@@ -1,60 +1,58 @@
+import { useTranslation } from "react-i18next";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
 
-function Home2() {
+function Home2() {const { t } = useTranslation();
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+            <h1 style={{ fontSize: "2.6em" }}>{t("home2.letMe")}
+              <span className="purple">{t("home2.introduce")}</span>{t("home2.myself")}
             </h1>
-            <p className="home-about-body">
-              I’m a Software Engineer who loves transforming ideas into
-              reliable, scalable products. Over time, I’ve explored several
-              technologies and found my passion in building high-performance
-              systems and intuitive user experiences.
+            <p className="home-about-body">{t("home2.iMASoftwareEngineerWho")}
+
               <br />
-              <br />
-              I’m proficient in
+              <br />{t("home2.iMProficientIn")}
+
               <i>
                 <b className="purple">
+                  {" "}{t("home2.javascriptCRustNodeJsAnd")}
                   {" "}
-                  JavaScript, C++, Rust, Node.js, and Java{" "}
                 </b>
-              </i>
-              — and I enjoy working across both backend and frontend stacks.
+              </i>{t("home2.andIEnjoyWorking")}
+
               <br />
-              <br />
-              My key areas of interest include developing
+              <br />{t("home2.myKeyAreasOfInterest")}
+
               <i>
                 <b className="purple">
+                  {" "}{t("home2.webApplicationsBlockchainSolutions")}
                   {" "}
-                  Web Applications, Blockchain Solutions,{" "}
                 </b>
-              </i>
-              and exploring new ways to bridge on-chain and off-chain systems.
+              </i>{t("home2.andExploringNewWaysTo")}
+
               <br />
-              <br />
-              Whenever possible, I love building projects with
-              <b className="purple"> Node.js </b> and modern frameworks like{" "}
+              <br />{t("home2.wheneverPossibleILoveBuilding")}
+
+              <b className="purple">{t("home2.nodeJs")}</b>{t("home2.andModernFrameworksLike")}{" "}
               <i>
-                <b className="purple">React.js</b> and{" "}
-                <b className="purple">Next.js</b>.
+                <b className="purple">{t("home2.reactJs")}</b>{t("home2.and")}{" "}
+                <b className="purple">{t("home2.nextJs")}</b>.
               </i>
             </p>
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={myImg} className="img-fluid" alt={t("home2.avatar")} />
             </Tilt>
           </Col>
         </Row>
       </Container>
-    </Container>
-  );
+    </Container>);
+
 }
 export default Home2;
